@@ -7,13 +7,13 @@ import router from "./routes/user.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+
 app.use(cors());
 app.use(express.json());
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Server is running");
+  res.send("Server is running.....");
 });
 
 app.use("/api/users", router);
