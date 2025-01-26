@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import 'dotenv/config';
 import cors from "cors";
 import router from "./routes/user.js";
+import loanRoutes from "./routes/loanRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", router);
+app.use("/api/users", loanRoutes);
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI,)
